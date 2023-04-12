@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(236, 198, 128);
+}
+
+.borders{
+    border: 1px solid black; 
+    display: inline-block;
+    cursor: pointer;
+}
+
+#pokemonImg{
+    text-align: center;
+}
+
+img{
+    display: block;
+    cursor: pointer;
+}
+
+span{
+    cursor: pointer;
+}
+
+/* .middle{
+    text-align: center;
+} */
