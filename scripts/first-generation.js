@@ -7,7 +7,7 @@ const pokemon_URL = 'https://pokeapi.co/api/v2/pokemon/';
 
 // instead of continusly adding a new Element, just have it in the global
 //scope to prevent that from happening 
-
+const body = document.querySelector('body');
 
 const displayAPIInfo = async () =>{
         // const grabPokemon = document.querySelector('#grabPokemon')
@@ -23,6 +23,7 @@ const mapOutPokemon = async () => {
 // this is what I am currently working on 
 
     for(let i=1; i <= 151; i++){
+        // const loader = document.querySelector('.loader');
         const grabValue = await fetch(`${pokemon_URL}${i}`)
         const placeValue = await grabValue.json();
         const pokemon = placeValue;
@@ -66,6 +67,66 @@ const mapOutPokemon = async () => {
         })
 
         hoverOverPokemon.addEventListener('click', () => morePokeInfo(pokemonID))
+        // console.log(pokemonID)
+
+        //creating the loading screen
+        // const loadingScreen = document.createElement('div')
+        // loadingScreen.setAttribute('class', 'loader')
+        if(pokemonID !== 151){
+            // window.addEventListener("load", ()=> {
+            //     const loader = document.querySelector('.loader');
+            
+            //     // loader.classList.add("loader-hidden");
+            
+            //     // loader.addEventListener('transitionend', ()=> {
+            //     //     document.body.removeChild(loader);
+            //     // });
+            // });
+
+            // window.addEventListener("load", ()=> {
+            //     // body.appendChild('loadingScreen')
+            //     const loader = document.querySelector('.loader');
+            //     // loader.addEventListener('transitionend', ()=> {
+            //     //     document.body.removeChild('loader')
+            //     // })
+            // })
+            
+
+            //
+            console.log('loading')
+        }else{
+
+            // window.addEventListener("load", ()=> {
+            //     const loader = document.querySelector('.loader');
+            
+            //     loader.classList.add("loader-hidden");
+            
+            //     loader.addEventListener('transitionend', ()=> {
+            //         document.body.removeChild(loader);
+            //     });
+            // });
+            // window.addEventListener("load", ()=> {
+            //     const loader = document.querySelector('.loader');
+            //     loader.classList.add("loader-hidden");
+
+            //     // body.appendChild('loadingScreen')
+            //     // loadingScreen.classList.add("loader-hidden");
+
+            //     loadingScreen.addEventListener('transitionend', ()=> {
+            //         document.body.removeChild('loader')
+            //     })
+            // })
+
+            console.log('done')
+        }
+
+        const loader = document.querySelector('.loader');
+        loader.classList.add('loader-hidden');
+        // loader.addEventListener('transitionend', () => {
+        //   document.body.removeChild(loader);
+        // });
+
+        // if(pokemonID ===)
 
         // I'm trying to replace this function with code inside the for loop
         // pokemonImg(pokemonSprite);
@@ -83,3 +144,26 @@ const grabInfo = document.querySelector('#clickBtn')
 
 mapOutPokemon()
 
+// window.addEventListener("load", ()=> {
+//     const loader = document.querySelector('.loader');
+
+//     loader.classList.add("loader-hidden");
+
+//     loader.addEventListener('transitionend', ()=> {
+//         document.body.removeChild('loader')
+//     })
+// })
+
+// window.addEventListener("load", ()=> {
+//     const loader = document.querySelector('.loader');
+
+//     loader.classList.add("loader-hidden");
+
+//     loader.addEventListener('transitionend', ()=> {
+//         document.body.removeChild(loader);
+//     });
+// });
+
+// window.addEventListener('load', () => {
+//     alert('finished loading')
+// })

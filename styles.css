@@ -31,3 +31,54 @@ span{
 /* .middle{
     text-align: center;
 } */
+
+/* This is the loading screen  */
+
+
+.loader{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    /* use a pokeball */
+    background-color: rgb(236, 198, 128);
+    /* transition: opacity 10s, visibility 0.75s;  */
+    transition: opacity 9s, visibility 4.25s; 
+ } 
+
+
+.loader-hidden{
+    opacity: 0;
+    visibility: hidden; 
+}
+
+.loader::after{
+    content:'';
+    width: 175px;
+    height: 175px;
+    /* border: 15px solid #dddddd; */
+    /* background-color: black; */
+    background-image: url('./images/pokeball.png');
+    /* border-top-color: #f54949;
+    border-radius:50%; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    animation: loading 0.95s ease infinite;
+    
+
+}
+
+@keyframes loading{
+    from{
+        transform: rotate(0turn);
+    }
+    to{
+        transform: rotate(1turn);
+    }
+}
+
+

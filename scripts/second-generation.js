@@ -6,6 +6,8 @@
 //     return pokemon
 // }
 
+
+
 const displayPokemon = async() => {
     // const pokemon = await testing()
     // console.log(pokemon)
@@ -40,7 +42,17 @@ const displayPokemon = async() => {
         })
 
         showPokemon.addEventListener('click', () =>{pokemonContent(pokemon_ID)})
+
+        if(pokemon_ID !== 251){
+            console.log('loading')
+        } else{
+            console.log('finished')
+        }
     }
+
+    const loader = document.querySelector('.loader');
+    loader.classList.add("loader-hidden");
+
 
 
 }
@@ -49,10 +61,28 @@ const displayPokemon = async() => {
 displayPokemon()
 
 
-function pokemonContent(id){
-    // console.log(id)
+
+// This is more of the visual loading screen
+
+// function pokemonContent(id){
+//     // console.log(id)
     
-    // window.location.href = ``
-    window.location.href = `/pages/detail2.html?id=${id}`
+//     // window.location.href = ``
+//     window.location.href = `/pages/detail2.html?id=${id}`
     
-}
+// }
+
+// window.addEventListener('load', () => {
+//     alert('finished loading')
+// })
+
+
+// window.addEventListener("load", ()=> {
+//     const loader = document.querySelector('.loader');
+
+//     loader.classList.add("loader-hidden");
+
+//     // loader.addEventListener('transitionend', ()=> {
+//     //     document.body.removeChild('loader')
+//     // })
+// })
