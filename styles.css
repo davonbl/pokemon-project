@@ -13,6 +13,8 @@ body{
     margin: 5px;
     border-radius: 7px;
     background-color: #eaeaea;
+    width: 18%;
+    height: 156px;
 }
 
 #pokemonImg{
@@ -22,7 +24,12 @@ body{
 img{
     display: block;
     cursor: pointer;
+    padding-top: 16px; 
+    margin: auto;
+    width: 63%;
+    
 }
+/* added more styling by expanding the sizes of each square where the pokemon are nested */
 
 span{
     cursor: pointer;
