@@ -23,7 +23,7 @@ displayAPIInfo();
 const mapOutPokemon = async () => {
 // this is what I am currently working on 
 
-    for(let i=150; i <= 151; i++){
+    for(let i=1; i <= 151; i++){
         // const loader = document.querySelector('.loader');
         const grabValue = await fetch(`${pokemon_URL}${i}`)
         const placeValue = await grabValue.json();
