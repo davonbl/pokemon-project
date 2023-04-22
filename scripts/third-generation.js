@@ -53,6 +53,9 @@ function showPokemon(data, number){
         console.log('mouseout')
         placeImage.src = data.sprites.front_default
     } )
+
+    const loader = document.querySelector('.loader');
+    loader.classList.add("loader-hidden");
 }
 
 grabData();
