@@ -1,102 +1,155 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    background-color: rgb(236, 198, 128);
+body {
+  background-color: rgb(236, 198, 128);
+  background-image: url(./images/wallpaper-of-pikachu.jpg);
+  background-size: cover;
 }
 
-.borders{
-    border: 3px solid #692828;
-    display: inline-block;
-    cursor: pointer;
-    margin: 5px;
-    border-radius: 7px;
-    background-color: #eaeaea;
-    width: 18%;
-    height: 156px;
+.borders {
+  border: 3px solid #692828;
+  display: inline-block;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 7px;
+  background-color: #eaeaea;
+  width: 18%;
+  /* height: 156px; */
 }
 
-#pokemonImg{
-    text-align: center;
+#pokemonImg {
+  text-align: center;
 }
 
-img{
-    display: block;
-    cursor: pointer;
-    padding-top: 16px; 
-    margin: auto;
-    width: 63%;
-    
+img {
+  display: block;
+  cursor: pointer;
+  padding-top: 1rem;
+  margin: auto;
+  width: 50%;
 }
+
 /* added more styling by expanding the sizes of each square where the pokemon are nested */
-
-span{
-    cursor: pointer;
+span {
+  cursor: pointer;
 }
 
 /* .middle{
     text-align: center;
 } */
-
 /* This is the loading screen  */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* use a pokeball */
+  background-color: rgb(236, 198, 128);
+  /* transition: opacity 10s, visibility 0.75s;  */
+  transition: opacity 9s, visibility 4.25s;
+}
 
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 
-.loader{
-    position: fixed;
-    top:0;
-    left:0;
-    width:100vw;
-    height: 100vh;
+.loader::after {
+  content: "";
+  width: 175px;
+  height: 175px;
+  /* border: 15px solid #dddddd; */
+  /* background-color: black; */
+  background-image: url("./images/pokeball.png");
+  /* border-top-color: #f54949;
+  border-radius:50%; */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  animation: loading 0.95s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+.preview-bubble {
+  position: absolute;
+  z-index: 9;
+  opacity: 0.75;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  /* top: 5px;  */
+  /* width:50px;
+  height: 50px;  */
+}
+
+.nav__list {
+  list-style: none;
+  padding-left: 0;
+}
+.nav__list-link {
+  text-decoration: none;
+}
+.nav__list-toc {
+  display: inline-block;
+  width: 49.5%;
+  text-align: center;
+}
+
+.center {
+  /* display:flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  flex-direction: column;
+}
+.center__buttons {
+  display: flex;
+  gap: 16px;
+}
+.center__btn__link {
+  text-decoration: none;
+}
+.center__image {
+  padding-bottom: 20px;
+}
+.center__poke-img {
+  display: block;
+  margin: auto;
+  width: 60%;
+  max-width: 578px;
+  min-width: 200px;
+}
+
+.footer {
+  display: flex;
+  justify-content: right;
+  padding-top: 200px;
+}
+.footer__public-domain {
+  font-size: 12px;
+  padding-right: 10px;
+}
+.footer__link {
+  text-decoration: none;
+}
+
+/* section{
     display:flex;
     justify-content: center;
-    align-items: center;
-    /* use a pokeball */
-    background-color: rgb(236, 198, 128);
-    /* transition: opacity 10s, visibility 0.75s;  */
-    transition: opacity 9s, visibility 4.25s; 
- } 
-
-
-.loader-hidden{
-    opacity: 0;
-    visibility: hidden; 
-}
-
-.loader::after{
-    content:'';
-    width: 175px;
-    height: 175px;
-    /* border: 15px solid #dddddd; */
-    /* background-color: black; */
-    background-image: url('./images/pokeball.png');
-    /* border-top-color: #f54949;
-    border-radius:50%; */
-    background-repeat: no-repeat;
-    background-size: 100%;
-    animation: loading 0.95s ease infinite;
-    
-
-}
-
-@keyframes loading{
-    from{
-        transform: rotate(0turn);
-    }
-    to{
-        transform: rotate(1turn);
-    }
-}
-
-.preview-bubble {
-    position: absolute;
-    z-index: 9;
-    opacity: .75;
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    padding: 10px;
-    /* top: 5px;  */
-    /* width:50px;
-    height: 50px;  */
-  }
-
+} *//*# sourceMappingURL=styles.css.map */
