@@ -1,0 +1,60 @@
+body {
+  background-color: rgb(236, 198, 128);
+  background-image: url(../images/wallpaper-of-pikachu.jpg);
+  background-size: cover;
+}
+
+.nav__list {
+  list-style: none;
+  padding-left: 0;
+}
+.nav__list-link {
+  text-decoration: none;
+}
+.nav__list-toc {
+  display: inline-block;
+  width: 49.5%;
+  text-align: center;
+}
+
+.center {
+  /* display:flex;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  flex-direction: column;
+}
+.center__buttons {
+  display: flex;
+  gap: 16px;
+}
+.center__btn__link {
+  text-decoration: none;
+}
+.center__image {
+  padding-bottom: 20px;
+}
+.center__poke-img {
+  display: block;
+  margin: auto;
+  width: 60%;
+  max-width: 578px;
+  min-width: 200px;
+}
+
+.footer {
+  display: flex;
+  justify-content: right;
+  padding-top: 200px;
+}
+.footer__public-domain {
+  font-size: 12px;
+  padding-right: 10px;
+}
+.footer__link {
+  text-decoration: none;
+}/*# sourceMappingURL=styles2.css.map */

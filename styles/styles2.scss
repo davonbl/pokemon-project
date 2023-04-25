@@ -1,0 +1,94 @@
+body{
+    background-color: rgb(236, 198, 128);
+    background-image: url(../images/wallpaper-of-pikachu.jpg);
+    // background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.nav{
+    &__list{
+        list-style: none;
+        padding-left:0; 
+    }
+
+    &__list-link{
+        text-decoration: none;
+    }
+
+    &__list-toc{
+        display:inline-block; 
+        width:49.5%; 
+        text-align: center;
+    }
+}
+.center{
+    /* display:flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center; */
+    // display: flex;
+    // flex-direction: column;
+    // width: 62%;
+    // margin: auto;
+//     justify-content: center;
+//     align-items: center;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    height: 55vh;
+    flex-direction: column;
+
+    &__buttons{
+        display: flex;
+        gap: 16px;
+
+        // &__link{
+        //     text-decoration: none; 
+        // }
+    }
+
+    &__btn{
+        &__link{
+            text-decoration: none; 
+        }
+    }
+
+    &__image{
+        padding-bottom: 20px;
+    }
+
+    &__poke-img{
+        display: block;
+        // cursor: pointer;
+        // padding-top: 1rem;
+        margin: auto;
+        width: 60%;
+        max-width: 578px;
+        min-width: 200px;
+    }
+
+    // &__link{
+    //     text-decoration: none; 
+    // }
+
+
+ }
+
+
+ .footer{
+    display:flex; 
+    justify-content: right;
+    // outline: 2px solid black;
+    padding-top: 200px;
+
+    &__public-domain{
+        font-size: 12px;
+        padding-right: 10px;
+    }
+
+    &__link{
+        text-decoration: none;
+        
+    }
+ }

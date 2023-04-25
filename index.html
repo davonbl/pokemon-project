@@ -5,18 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="./styles.css"> -->
+    <link rel="stylesheet" href="./styles/styles2.css">
 </head>
 <body>
-
-    <button>
-        <a href='./pages/first-generation.html'> First Generation</a>
-    </button>
-    <button>
-        <a href="./pages/second-generation.html">Second Generation</a>
-    </button>
-    <button>
-        <a href="./pages/third-generation.html">Third Generation</a>
-    </button>
+    <header class = 'header'>
+        <nav class ='nav'> 
+            <ul class = 'nav__list'>
+                <li class='nav__list-toc'>
+                    <a class="nav__list-link" href="./index.html">Home</a>
+                </li>
+                <li class= 'nav__list-toc'>
+                    <a class="nav__list-link" href="#">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="center">
+        <div class="center__content center__image">
+            <img class="center__poke-img" src ='./images/International_Pokémon_logo-3.png'>
+        </div>
+        <div class="center__content center__buttons">
+            <button class="center__btn">
+                <a class="center__btn__link" href='./pages/first-generation.html'> First Generation</a>
+            </button>
+            <button class="center__btn">
+                <a class="center__btn__link" href="./pages/second-generation.html">Second Generation</a>
+            </button>
+            <button class="center__btn">
+                <a class="center__btn__link" href="./pages/third-generation.html">Third Generation</a>
+            </button>
+        </div>
+    </main>
     
+    <footer class="footer">
+        <p class="footer__public-domain">
+            <a class="footer__link" href="https://commons.wikimedia.org/wiki/File:International_Pok%C3%A9mon_logo.svg" 
+            target="_blank">
+            Nintendo</a>, Public domain, via Wikimedia Commons
+        </p>
+        <p class="footer__public-domain">
+            <a class="footer__link" href="https://cartoonwallbase.blogspot.com/search/label/Pokemon" target="_blank">
+                Ana Sayfa</a>, Public domain, via Cartoon Wallpapers 
+        </p>
+    </footer>
 </body>
 </html>
