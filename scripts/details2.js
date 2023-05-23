@@ -1,6 +1,6 @@
 
 const body = document.querySelector('body'); 
-console.log('testing')
+// console.log('testing')
 
 const goBackBtn = document.querySelector('#goBack')
 
@@ -9,6 +9,15 @@ const grabtheID = grabURL.get('id')
 
 console.log(grabURL)
 console.log(grabtheID)
+
+// const testingWindow = window.location.search
+// const testingURL = new URLSearchParams(window.location.search.substring(window.location.search('?')))
+// testingURL.sort()
+
+//.substring
+// console.log(grabURL.sort())
+
+// console.log('Sorted testingURL: ',testingURL );
 
 goBackBtn.addEventListener('click', ()=> {
     // console.log('go back')
@@ -30,6 +39,25 @@ const pokemonDetails = async() => {
     mainContainer.append(pokemonContainer)
     body.append(mainContainer)
 
+    let grabPokemon = pokemon.types
+
+    const pokemonType = document.createElement('p')
+    pokemonType.innerText = 'Type: '
+    mainContainer.append(pokemonType)
+    // console.log(pokemon)
+    //[0].type.name
+    console.log(grabPokemon)
+    grabPokemon.forEach((element) => {
+        const pokemonShow = document.createElement('p');
+        const description = element.type.name
+        pokemonShow.innerText = description.charAt(0).toUpperCase() + description.substring(1)
+        mainContainer.append(pokemonShow)
+        console.log(element)
+        // [console.log(description.charAt(0).toUpperCase() + description.substring(1))]
+    })
+
+
+    console.log("Show the Pokemon: ",  grabPokemon)
 
     ///////////////////////////////////////
 
@@ -68,7 +96,7 @@ const pokemonDetails = async() => {
 
     // placeText.innerText = pargraph.replace('\f', ' ')
     if(pargraph.includes('\f')){
-        console.log('it has it')
+        // console.log('it has it')
         // pargraph.replace('\f', 'hello')
         placeText.innerText = pargraph.replace('\f', ' ')
     }

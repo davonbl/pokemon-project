@@ -1,8 +1,17 @@
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+@use '../styles/partials/fonts' as *;
+
 body{
     background-color: rgb(236, 198, 128);
     background-image: url(../images/wallpaper-of-pikachu.jpg);
-    // background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto 695px;
+    background-repeat: no-repeat;
+
+    @include desktop {
+        background-size: 1637px 749px;
+       
+    }
 }
 
 
@@ -10,6 +19,8 @@ body{
     &__list{
         list-style: none;
         padding-left:0; 
+        display: flex;
+        justify-content: space-evenly;
     }
 
     &__list-link{
@@ -18,8 +29,16 @@ body{
 
     &__list-toc{
         display:inline-block; 
-        width:49.5%; 
         text-align: center;
+        width: 30%; 
+    }
+
+    @include tablet{
+
+        &__list-toc{
+            width:49.5%; 
+
+        }
     }
 }
 .center{
@@ -33,44 +52,87 @@ body{
     // margin: auto;
 //     justify-content: center;
 //     align-items: center;
-    display: flex;  
-    justify-content: center;
-    align-items: center;
-    height: 55vh;
-    flex-direction: column;
+        display: flex;  
+        justify-content: center;
+        align-items: center;
+        height: 55vh;
+        flex-direction: column;
 
-    &__buttons{
-        display: flex;
-        gap: 16px;
+        &__buttons{
+            display: flex;
+            gap: 16px;
+            flex-direction: column;
+
+            @include tablet{
+                flex-direction: row;
+            }
+        }
+
+            // &__link{
+            //     text-decoration: none; 
+            // }
+        
+
+        &__btn{
+            &__link{
+                text-decoration: none; 
+            }
+        }
+
+        &__image{
+            padding-bottom: 20px;
+        }
+
+        &__poke-img{
+            display: block;
+            // cursor: pointer;
+            // padding-top: 1rem;
+            margin: auto;
+            width: 60%;
+            max-width: 578px;
+            min-width: 200px;
+        }
+    @include tablet{
+        // display: flex;  
+        // justify-content: center;
+        // align-items: center;
+        // height: 55vh;
+        // flex-direction: column;
+
+        &__buttons{
+            display: flex;
+            gap: 16px;
+            flex-direction:row;
+
+            // &__link{
+            //     text-decoration: none; 
+            // }
+        }
+
+        &__btn{
+            &__link{
+                text-decoration: none; 
+            }
+        }
+
+        &__image{
+            padding-bottom: 20px;
+        }
+
+        &__poke-img{
+            display: block;
+            // cursor: pointer;
+            // padding-top: 1rem;
+            margin: auto;
+            width: 60%;
+            max-width: 578px;
+            min-width: 200px;
+        }
 
         // &__link{
         //     text-decoration: none; 
         // }
-    }
-
-    &__btn{
-        &__link{
-            text-decoration: none; 
         }
-    }
-
-    &__image{
-        padding-bottom: 20px;
-    }
-
-    &__poke-img{
-        display: block;
-        // cursor: pointer;
-        // padding-top: 1rem;
-        margin: auto;
-        width: 60%;
-        max-width: 578px;
-        min-width: 200px;
-    }
-
-    // &__link{
-    //     text-decoration: none; 
-    // }
 
 
  }
