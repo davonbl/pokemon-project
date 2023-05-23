@@ -175,7 +175,7 @@ const mapOutPokemon = async () => {
 function morePokeInfo(id){    
     window.location.href = `/pages/detail2.html?id=${id}`
 }
-const grabInfo = document.querySelector('#clickBtn')
+// const grabInfo = document.querySelector('#clickBtn')
 
 
 mapOutPokemon()
