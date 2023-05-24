@@ -39,7 +39,9 @@ span {
 /* .middle{
     text-align: center;
 } */
-/* This is the loading screen  */
+/**************************
+This is the loading screen  
+******************************/
 .loader {
   position: fixed;
   top: 0;
@@ -94,9 +96,18 @@ span {
   height: 50px;  */
 }
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .nav__list {
   list-style: none;
   padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 .nav__list-link {
   text-decoration: none;
@@ -105,6 +116,9 @@ span {
   display: inline-block;
   width: 49.5%;
   text-align: center;
+}
+.nav__sub-two {
+  margin-top: 1rem;
 }
 
 .center {

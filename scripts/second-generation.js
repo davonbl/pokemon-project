@@ -52,6 +52,8 @@ const displayPokemon = async() => {
             
         }
         // return pokemon; 
+        // const loader = document.querySelector('.loader');
+        // loader.classList.add('loader-hidden');
         
     }
 
