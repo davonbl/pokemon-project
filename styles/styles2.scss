@@ -16,11 +16,19 @@ body{
 
 
 .nav{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
     &__list{
         list-style: none;
         padding-left:0; 
         display: flex;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
+        justify-content: space-between;
+        /* margin-top: 0; */
+        gap: 15px;
     }
 
     &__list-link{
@@ -31,6 +39,10 @@ body{
         display:inline-block; 
         text-align: center;
         width: 30%; 
+    }
+
+    &__sub-two{
+        margin-top: 1rem;
     }
 
     @include tablet{

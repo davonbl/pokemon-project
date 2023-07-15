@@ -1,1 +1,135 @@
-/*# sourceMappingURL=styles3.css.map */
+@font-face {
+  font-family: "Amatic SC";
+  src: url("../../Assets/fonts/Amatic_SC/AmaticSC-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Amatic SC";
+  src: url("../../Assets/fonts/Amatic_SC/AmaticSC-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("../../Assets/fonts/Apercu/ApercuMonoProLight.ttf");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("../../Assets/fonts/Apercu/ApercuMonoProRegular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("../../Assets/fonts/Apercu/ApercuMonoProMedium.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Apercu Mono";
+  src: url("../../Assets/fonts/Apercu/ApercuMonoProBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../Assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Titillium Web";
+  src: url("../../Assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+  background-color: rgb(236, 198, 128);
+  background-image: url(../images/wallpaper-of-pikachu.jpg);
+  background-size: auto 695px;
+  background-repeat: no-repeat;
+}
+@media screen and (min-width: 64rem) {
+  body {
+    background-size: 1637px 749px;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.nav__list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;
+  /* margin-top: 0; */
+  gap: 15px;
+}
+.nav__list-link {
+  text-decoration: none;
+}
+.nav__list-toc {
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+}
+.nav__sub-two {
+  margin-top: 1rem;
+}
+@media screen and (min-width: 40rem) {
+  .nav__list-toc {
+    width: 49.5%;
+  }
+}
+
+.poke-img {
+  width: 20%;
+}
+
+.poke-img:hover {
+  animation: shaking 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shaking {
+  0% {
+    transform: translate(0px, -1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(0deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(0deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(0deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(0deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(0deg);
+  }
+  90% {
+    transform: translate(-1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-1px, -2px) rotate(0deg);
+  }
+}/*# sourceMappingURL=styles3.css.map */

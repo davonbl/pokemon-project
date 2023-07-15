@@ -159,8 +159,14 @@ const mapOutPokemon = async () => {
             childContainer.src= pokemonSprite
         })
 
+        //THIS IS FOR THE LOADING SCREEN
         const loader = document.querySelector('.loader');
         loader.classList.add('loader-hidden');
+
+
+
+
+
 
         //how can this work properly 
         // loader.addEventListener('transitionend', ()=> {
