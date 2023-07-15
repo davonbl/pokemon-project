@@ -1,4 +1,4 @@
-
+let body = document.querySelector('body');
 // const getDate = new Date;
 // // console.log(getDate)
 
@@ -54,11 +54,23 @@ const displayTime = () => {
 
     const time = `${hours}:${mintues}:${seconds} ${amOrPm}`
     console.log(time)
-    console.log(typeof(time))
+    // console.log(typeof(time))
     return time;
 }
 
 displayTime()
+
+if(localStorage.getItem('Pokemon')){
+    let getPokeImage = JSON.parse(localStorage.getItem('Pokemon'))
+    console.log(getPokeImage)
+    console.log(getPokeImage.image)
+    let displayPokemon = document.querySelector('#pokeBall')
+    displayPokemon.src = getPokeImage.image
+
+    let displayText = document.createElement('p')
+    displayText.innerText = getPokeImage.info
+    body.append(displayText)
+}
 
 
 
@@ -66,45 +78,65 @@ displayTime()
 const clickPokeball = document.querySelector('#pokeBall')
 
 async function testingAgain(e) {
-    const resetPokeball = displayTime(); 
+
+    if(localStorage.getItem('Pokemon')){
+        console.log('you already click on the pokeball')
+    }else{
+    // const resetPokeball = displayTime(); 
 
     let testing = Math.floor((Math.random() * 385) + 1);
-    console.log(testing)
-    console.log(e)
-    console.log(e.target)
+    // console.log(testing)
+    // console.log(e)
+    // console.log(e.target)
     const randomPokemon = await fetch('https://pokeapi.co/api/v2/pokemon/' + testing)
     const grabPokemon = await randomPokemon.json();
+
+    let grabPokemonInfo = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${testing}`)
+    let displayPokeInfo = await grabPokemonInfo.json()
+
     console.log(grabPokemon)
     const displayPokemon = grabPokemon.sprites.front_default;
+    console.log('URL-image', displayPokemon)
+
     // console.log(displayPokemon)
     
     const removePokeball = document.querySelector('#pokeBall')
     removePokeball.src = displayPokemon;
     removePokeball.style.animation = 'none';
-    clickPokeball.disabled = true;
-    // if(e.button === 0){
-    //     let text = "You pressed button: " + e.button;
-    //     console.log(text)
-    //     console.log('FUCK YOU')
-    //     clickPokeball.removeEventListener('click', testingAgain)
-    //     // document.getElementById("pokeBall").disabled = true;
-    //     // removePokeball.disabled = true; 
 
-    // }
+    /* This is likely causing me to not be able to click on the pokemon
+     but is useless after refreshing the page */
+    // clickPokeball.disabled = true;
+    
+    /* this is where the eventlistener becomes useless */
+    // clickPokeball.removeEventListener('click', testingAgain)
 
-    clickPokeball.removeEventListener('click', testingAgain)
 
-    // THIS IS FOR RESETING POKEMON OF THE DAY
-    // if(resetPokeball > '4:38:00 PM'){
-    //     console.log('TESTING')
-    //     clickPokeball.addEventListener('click', testingAgain)
-    // }
-    // if(resetPokeball > '4:51:00 PM' && resetPokeball <= '4:51:30 PM'){
-    //     console.log('TESTING 2')
-    //     clickPokeball.addEventListener('click', testingAgain)
-    // }else{
-    //     console.log('not working')
-    // }
+    // getting the info of the pokemon
+
+    // document.querySelector
+
+    console.log(displayPokeInfo)
+    console.log(displayPokeInfo.flavor_text_entries)
+    console.log(displayPokeInfo.flavor_text_entries[0].flavor_text)
+
+    let displayText = document.createElement('p')
+    let pokeInfo = displayPokeInfo.flavor_text_entries[0].flavor_text
+    displayText.innerText = pokeInfo
+    body.append(displayText)
+
+
+    let todaysPokemon = {
+        name: grabPokemon.name,
+        info: pokeInfo,
+        image: displayPokemon
+    }
+
+    if(!localStorage.getItem('Pokemon')){
+        localStorage.setItem('Pokemon', JSON.stringify(todaysPokemon))
+    }
+
+    }
     
 }
 
@@ -116,76 +148,18 @@ clickPokeball.addEventListener('click', testingAgain)
 //so that the user can get a new pokemon 
 
 
-let testing2 = displayTime()
-console.log(testing2)
+// let testing2 = displayTime()
+// console.log(typeof testing2)
 
 setInterval(() => {
-    displayTime()
-    // if(testing2 > '4:48:00 PM' && testing2 <= '4:49:00 PM'){
-    //     console.log('TESTING 2')
-    //     clickPokeball.addEventListener('click', testingAgain)
-    // }else{
-    //     console.log('not working')
-    // }
+    // displayTime()
+    let testing3 = displayTime();
+    if(testing3 === '0:00:00 AM'){
+        localStorage.removeItem('Pokemon');
+        document.querySelector('#pokeBall').src = "../images/pokeball.png"
+        document.querySelector('p').remove()
+        
+    }else{
+        console.log('not working')
+    }
 }, 1000)
-
-// if(testing2 > '4:49:00 PM' && testing2 <= '4:50:00 PM'){
-//     console.log('TESTING 2')
-//     clickPokeball.addEventListener('click', testingAgain)
-// }else{
-//     console.log('not working')
-// }
-
-
-// if(testing2 >= '4:34:30 PM'){
-//     console.log('TESTING 2')
-//     clickPokeball.addEventListener('click', testingAgain)
-// }else{
-//     console.log('not working')
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const getRandomPokemon = async () => {
-//     const getRandomNumber = Math.floor((Math.random() * 385) + 1)
-//     // console.log(getRandomNumber)
-//     const getInfo = await fetch(`https://pokeapi.co/api/v2/pokemon/${getRandomNumber}`)
-//     const overallPokeInfo = await getInfo.json();
-//     // console.log(overallPokeInfo)  
-//     const thisPokeSprite = overallPokeInfo.sprites.front_default;
-//     console.log(getRandomNumber, ':' , thisPokeSprite)  
-// }
-
-
-// getRandomPokemon();
-// getRandomPokemon();
-// getRandomPokemon();
