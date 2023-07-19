@@ -62,8 +62,8 @@ displayTime()
 
 if(localStorage.getItem('Pokemon')){
     let getPokeImage = JSON.parse(localStorage.getItem('Pokemon'))
-    console.log(getPokeImage)
-    console.log(getPokeImage.image)
+    // console.log(getPokeImage)
+    // console.log(getPokeImage.image)
     let displayPokemon = document.querySelector('#pokeBall')
     displayPokemon.src = getPokeImage.image
 
@@ -116,9 +116,9 @@ async function testingAgain(e) {
 
     // document.querySelector
 
-    console.log(displayPokeInfo)
-    console.log(displayPokeInfo.flavor_text_entries)
-    console.log(displayPokeInfo.flavor_text_entries[0].flavor_text)
+    // console.log(displayPokeInfo)
+    // console.log(displayPokeInfo.flavor_text_entries)
+    // console.log(displayPokeInfo.flavor_text_entries[0].flavor_text)
 
     let displayText = document.createElement('p')
     let pokeInfo = displayPokeInfo.flavor_text_entries[0].flavor_text

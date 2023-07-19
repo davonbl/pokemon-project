@@ -209,3 +209,72 @@ mapOutPokemon()
 // window.addEventListener('load', () => {
 //     alert('finished loading')
 // })
+
+// To reset pokemon of the day 
+
+
+const getHours = () => {
+    let date = new Date();
+    let hour = date.getHours()
+    
+    if(hour > 12){
+        hour = hour - 12;
+    }
+    return hour;
+}
+
+const getAmOrPm = () => {
+    let date = new Date();
+    let hour = date.getHours();
+    let amOrPm = 'AM'
+
+    if(hour > 12){
+        amOrPm = 'PM'
+    }
+    return amOrPm
+}
+
+const getMinutes = () => {
+    let date = new Date();
+    let mintues = date.getMinutes();
+
+    if(mintues < 10){
+        mintues = '0' + mintues
+    }
+
+    return mintues;
+}
+
+const getSeconds = () => {
+    let date = new Date()
+    let seconds = date.getSeconds();
+
+    if(seconds < 10){
+        seconds = '0' + seconds;
+    }
+
+    return seconds;
+}
+
+const getTime = () => {
+    let hours = getHours();
+    let mintues = getMinutes();
+    let seconds = getSeconds();
+    let amOrPm = getAmOrPm();
+
+    let time = `${hours}:${mintues}:${seconds} ${amOrPm}`
+
+    console.log(time);
+    return time;
+}
+
+getTime(); 
+
+setInterval(()=> {
+    let removePokemonObj = getTime(); 
+    if(removePokemonObj === '0:00:00 AM'){
+        // console.log('stick your middle figners up in the air!!!!!');
+        // console.log(localStorage.getItem('Pokemon'));
+        localStorage.removeItem('Pokemon')
+    }
+}, 1000)
